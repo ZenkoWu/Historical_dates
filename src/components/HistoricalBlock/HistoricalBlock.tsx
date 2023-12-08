@@ -34,6 +34,36 @@ const StyledHorizontalLine = styled.div`
     width: 100%;
     border-top: 1px solid #e9ebf1;
 `
+const StyledCenter = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    width: 0;
+    height: 0;
+    margin: auto;
+
+    @media (max-width: 576px) {
+        display: none;
+    }
+`
+const StyledCircle = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    margin: auto;
+    height: 27vw;
+    width: 27vw;
+    border: 1px solid #d4dee3;
+    border-radius: 50%; 
+
+    @media (max-width: 576px) {
+        display: none;
+    }
+`
 export const HistoricalBlock = ({sections}: {sections: TSections}) => { 
 
     
@@ -43,7 +73,12 @@ export const HistoricalBlock = ({sections}: {sections: TSections}) => {
            
                 <StyledVerticalLine/>
                 
-                <StyledHorizontalLine></StyledHorizontalLine>
+                <StyledHorizontalLine>
+                    <StyledCenter>
+                            
+                    </StyledCenter>
+                    <StyledCircle/>
+                </StyledHorizontalLine>
                    
             </StyledContainer>
         </StyledPadding>
