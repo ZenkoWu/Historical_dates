@@ -20,6 +20,7 @@ import {
     StyledSection, 
     StyledSectionBtn, 
     StyledSectionTitle, 
+    StyledSectionTitleMobile, 
     StyledStartDate, 
     StyledTextContainer, 
     StyledVerticalLine 
@@ -166,7 +167,10 @@ export const HistoricalBlock = ({
                             </StyledPrevNextBtn>
                         </StyledBtnGroup>
                     </StyledBtnContainer>
-                    
+
+                    <StyledSectionTitleMobile>
+                        {dateSections.find(el => el.id === section)!.title}
+                    </StyledSectionTitleMobile>
                     <Slider slides={dateSections.find(el => el.id === section)!.events}/>
                 </StyledTextContainer>  
             </StyledContainer>
