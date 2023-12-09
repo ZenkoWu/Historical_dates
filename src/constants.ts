@@ -4,6 +4,8 @@ export const dateSections = [
         title: 'Технологии',
         dateStart: 1980,
         dateEnd: 1986,
+        x: 0, 
+        y: 0, 
         events: [
             {
                 id: 0,
@@ -56,6 +58,8 @@ export const dateSections = [
         title: 'Кино', 
         dateStart: 1987,
         dateEnd: 1991,
+        x: 0, 
+        y: 0,  
         events: [
             {
                 id: 0,
@@ -89,6 +93,8 @@ export const dateSections = [
         title: 'Литература',
         dateStart: 1992,
         dateEnd: 1997, 
+        x: 0, 
+        y: 0,  
         events: [
             {
                 id: 0,
@@ -118,6 +124,8 @@ export const dateSections = [
         title: 'Театр', 
         dateStart: 1999,
         dateEnd: 2004, 
+        x: 0, 
+        y: 0,  
         events: [
             {
                 id: 0,
@@ -160,6 +168,8 @@ export const dateSections = [
         title: 'Спорт',
         dateStart: 2006,
         dateEnd: 2014, 
+        x: 0, 
+        y: 0,  
         events: [
             {
                 id: 0,
@@ -203,6 +213,8 @@ export const dateSections = [
         title: 'Наука', 
         dateStart: 2015,
         dateEnd: 2022, 
+        x: 0, 
+        y: 0,  
         events: [
             {
                 id: 0,
