@@ -263,3 +263,5 @@ export const dateSections = [
         ]
     },
 ];
+
+export const CIRCLE_DIAMETER: number = 27
