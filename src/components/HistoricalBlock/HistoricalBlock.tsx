@@ -111,6 +111,29 @@ const StyledSectionBtn = styled.button`
 const StyledSectionTitle = styled.h4`
     fontSize: 1.2vw;
 `
+const StyledPeriod = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    width: 50vw;
+    height: 15vh; 
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    z-index: 2;
+    font-size: 9vw; 
+`
+const StyledStartDate = styled.p`
+    color: #1515b2;
+`
+const StyledEndDate = styled.p`
+    color: #ea2c4d;
+`
+
 const setPosition = (
     diameter: number, 
     data: TSection[], 
@@ -169,6 +192,16 @@ export const HistoricalBlock = ({
                 <StyledVerticalLine/>
                 
                 <StyledHorizontalLine>
+                    <StyledPeriod>
+                        <StyledStartDate>
+                            {dateSections.find(el => el.id === section)?.dateStart}
+                        </StyledStartDate>
+
+                        <StyledEndDate>
+                            {dateSections.find(el => el.id === section)?.dateEnd} 
+                        </StyledEndDate>
+                    </StyledPeriod>
+
                     <StyledCenter>
                             {
                                 dateSections.map(el => (
@@ -190,7 +223,7 @@ export const HistoricalBlock = ({
                                 ))
                             }
                     </StyledCenter>
-                    
+
                     <StyledCircle/>
                 </StyledHorizontalLine>
                    
