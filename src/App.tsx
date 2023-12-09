@@ -5,7 +5,10 @@ import { dateSections } from './constants';
 export const App = () => {
 	return (
 		<div>
-			<HistoricalBlock sections={dateSections}/>
+			<HistoricalBlock 
+				sections={dateSections} 
+				startPointId={dateSections.find(el => el.id === 1)!.id}
+			/>
 		</div>
 	);
 }
