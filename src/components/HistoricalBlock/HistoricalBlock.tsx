@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Slider } from "../Slider/Slider";
 
 type TSection = {
     id: number,
@@ -133,6 +134,64 @@ const StyledStartDate = styled.p`
 const StyledEndDate = styled.p`
     color: #ea2c4d;
 `
+const StyledTextContainer = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10%;
+    padding-bottom: 5%;
+`
+
+const StyledGradient = styled.div`
+    border-image: 
+        linear-gradient(
+            to bottom, 
+            #2E9AFF,
+            #F498AD
+        )
+        1 100% 50 /
+        0px 0 69px 5px /
+        0px 0
+        stretch;
+    padding-left: 3vw; 
+`
+const StyledHeadingContainer = styled.div`
+    padding-bottom: 22%;
+`
+
+const StyledHeading = styled.h1`
+    font-size: 3vw;
+    max-width: 33%;
+`
+const StyledBtnContainer = styled.div`
+    padding-left: 3vw; 
+    font-weight: bold; 
+    padding-bottom: 5%;
+`
+const StyledBtnTitle = styled.p`
+    font-size: 1.1vw;
+`
+const StyledBtnGroup = styled.div`
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;   
+`
+const StyledPrevNextBtn = styled.button`
+    font-size: 18px;
+    cursor: pointer;
+    color: #586a8a;
+    width: 3vw;
+    height: 3vw; 
+    border: 1px solid #586a8a;
+    border-radius: 50%; 
+    background-color: transparent;
+
+    &:disabled {
+        color: #c0c8d6;
+        border: 1px solid #c0c8d6;
+    }
+`
 
 const setPosition = (
     diameter: number, 
@@ -226,7 +285,44 @@ export const HistoricalBlock = ({
 
                     <StyledCircle/>
                 </StyledHorizontalLine>
+
+                <StyledTextContainer className='red'>
+                    <StyledHeadingContainer>
+                        <StyledGradient>
+                            <StyledHeading>Исторические даты</StyledHeading>
+                        </StyledGradient>
+                    </StyledHeadingContainer>
                    
+                   <StyledBtnContainer>
+                        <StyledBtnTitle>
+                            0{section}/0{dateSections.length}
+                        </StyledBtnTitle>
+                        
+                        <StyledBtnGroup>
+                            <StyledPrevNextBtn
+                                disabled={section === 1} 
+                                onClick={()=> {
+                                    setSection((prev) => prev - 1)
+                                    changePointsPosition(section - 1)
+                                }}
+                            >
+                                {`❮`}
+                            </StyledPrevNextBtn>
+
+                            <StyledPrevNextBtn
+                                disabled={section === dateSections.length}
+                                onClick={()=> {
+                                    setSection((prev) => prev + 1)
+                                    changePointsPosition(section + 1) 
+                                }}
+                            >
+                                {`❯`}
+                            </StyledPrevNextBtn>
+                        </StyledBtnGroup>
+                    </StyledBtnContainer>
+                    
+                    <Slider slides={dateSections.find(el => el.id === section)!.events}/>
+                </StyledTextContainer>  
             </StyledContainer>
         </StyledPadding>
     )
