@@ -84,13 +84,12 @@ export const StyledPoint = styled.div<{left: number, top: number, isBorder: bool
     &:hover {
         border: none !important;
         width: 10px;
-        transition: all 0.5s ease-out;
+        transition: all 0.5s ease;
         transform: scale(110%);
     }
 
     &:hover .section {
         display: flex;
-        transition: transform 4s ease-in-out 3s;
     }
 
 `
@@ -109,11 +108,6 @@ export const StyledSectionBtn = styled.button`
     border-radius: 50%;
     border: 1px solid grey;
     background-color: #f4f5f9;
-
-    &:hover {
-        transform: scale(110%);
-        transition: all 1s ease-out;
-    }
 `
 export const StyledSectionTitle = styled.h4`
     fontSize: 1.2vw;
