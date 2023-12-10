@@ -1,4 +1,3 @@
-import './App.css';
 import { HistoricalBlock } from './components/HistoricalBlock/HistoricalBlock';
 import { dateSections } from './constants';
 
