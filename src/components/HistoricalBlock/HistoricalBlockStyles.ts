@@ -73,12 +73,12 @@ export const StyledCircle = styled.div`
 export const StyledPoint = styled.div<{left: number, top: number, isBorder: boolean}>`
     position: absolute;
     z-index: 1000;
-    left: ${({left}) => left}px;
-    top: ${({top}) => top}px;
+    left: ${({left}: {left: number}) => left}px;
+    top: ${({top}:{top: number}) => top}px;
     display: flex; 
     align-items: center;
     gap: 10px;
-    border:  ${({isBorder}) => isBorder ? '3px solid grey': 'none'};
+    border:  ${({isBorder}: {isBorder:boolean}) => isBorder ? '3px solid grey': 'none'};
     border-radius: 50%;
 
     &:hover {
@@ -97,7 +97,7 @@ export const StyledSection = styled.div<{isDisplay: boolean}>`
     position: absolute;  
     top: -20px; 
     left: -20px; 
-    display: ${({isDisplay}) =>  isDisplay ? 'flex' : 'none'}; 
+    display: ${({isDisplay}:{isDisplay: boolean}) =>  isDisplay ? 'flex' : 'none'}; 
     align-items: center; 
     gap: 15px; 
 `
